@@ -71,4 +71,9 @@ describe("Hero", function(){
     assert.deepEqual(fitzgerald.sortTasksByReward(), [hug_penny, find_facts, like_things]);
   });
 
+  it("should be able to complete a task", function(){
+    fitzgerald.completeTask(hug_penny);
+    assert.strictEqual(hug_penny.completed, true);
+  });
+
 });
