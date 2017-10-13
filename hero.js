@@ -18,11 +18,22 @@ Hero.prototype.addTask = function(task){
   this.tasks.push(task);
 };
 
+Hero.prototype.sortTasksByDifficulty = function(){
+  return this.tasks.sort(function (a, b) {
+    return a.difficulty - b.difficulty;
+  });
+};
+
+  Hero.prototype.sortTasksByUrgency = function(){
+    return this.tasks.sort(function (a, b) {
+      return a.urgency - b.urgency;
+    });
+  };
+
+  Hero.prototype.sortTasksByReward = function(){
+    return this.tasks.sort(function (a, b) {
+      return b.reward - a.reward;
+    });
+  };
+
 module.exports = Hero;
-
-
-// - A Hero has a name
-// - A Hero has health
-// - A Hero has a favourite food
-// - A Hero can talk saying their name
-// - A Hero has a collection of tasks to complete

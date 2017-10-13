@@ -15,8 +15,8 @@ describe("Hero", function(){
     fitzgerald = new Hero("Fitzgerald", 100, "biscuit", "Hi! I'm Fitzgerald");
     biscuit = new Food("biscuit", 10);
     carrot = new Food("carrot", 50);
-    find_facts = new Task("find facts", 1, 5, 10);
-    like_things = new Task("like things", 10, 10, 0);
+    find_facts = new Task("find facts", 5, 1, 10);
+    like_things = new Task("like things", 10, 5, 0);
     hug_penny = new Task("hug Penny", 1, 10, 100);
     fitzgerald.addTask(find_facts);
     fitzgerald.addTask(like_things);
@@ -59,16 +59,16 @@ describe("Hero", function(){
     assert.strictEqual(fitzgerald.health, 150);
   });
 
-  xit("should be able to order tasks by difficulty", function(){
-    assert.strictEqual(fitzgerald.tasks, [FILL IN]);
+  it("should be able to order tasks by difficulty", function(){
+    assert.deepEqual(fitzgerald.sortTasksByDifficulty(), [hug_penny, find_facts, like_things]);
   });
 
-  xit("should be able to order tasks by difficulty", function(){
-    assert.strictEqual(fitzgerald.tasks, [FILL IN]);
+  it("should be able to order tasks by urgency", function(){
+    assert.deepEqual(fitzgerald.sortTasksByUrgency(), [find_facts, like_things, hug_penny]);
   });
 
-  xit("should be able to order tasks by difficulty", function(){
-    assert.strictEqual(fitzgerald.tasks, [FILL IN]);
+  it("should be able to order tasks by reward", function(){
+    assert.deepEqual(fitzgerald.sortTasksByReward(), [hug_penny, find_facts, like_things]);
   });
 
 });
