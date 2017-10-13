@@ -76,4 +76,10 @@ describe("Hero", function(){
     assert.strictEqual(hug_penny.completed, true);
   });
 
+  it("should be able to view completed tasks", function(){
+    fitzgerald.completeTask(hug_penny);
+    assert.strictEqual(fitzgerald.viewCompletedTasks(), [hug_penny]);
+  });
+
+
 });

@@ -41,6 +41,13 @@ Hero.prototype.sortTasksByDifficulty = function(){
     return task;
   };
 
-
+  Hero.prototype.viewCompletedTasks = function(tasks){
+//       var completedTasks = this.tasks.filter(function(task){
+//       if (task.completed = true){
+//         completedTasks.push(task);
+//       }
+//   return completedTasks;
+// });
+}
 
 module.exports = Hero;
