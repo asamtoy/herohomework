@@ -42,33 +42,17 @@ Hero.prototype.sortTasksByDifficulty = function(){
   };
 
   Hero.prototype.viewCompletedTasks = function(){
-    var completedTasks = [];
-    for (var i = 0; i < this.tasks.length ; i++) {
-    if (this.tasks[i].completed === true) {
-        completedTasks.push(this.tasks[i]);
-    };
-  };
-  return completedTasks;
+    var completedTasks = this.tasks.filter(function(task){
+      return task.completed === true;
+    });
+    return completedTasks;
 };
-    // var completedTasks = this.tasks.filter(function(task){
-    //   return task.completed = true;
-    // });
-// };
 
 Hero.prototype.viewUncompletedTasks = function(task){
-  var uncompletedTasks = [];
-  for (var i = 0; i < this.tasks.length ; i++) {
-  if (this.tasks[i].completed === false) {
-      uncompletedTasks.push(this.tasks[i]);
-    };
-  };
+  var uncompletedTasks = this.tasks.filter(function(task){
+    return task.completed === false;
+  });
   return uncompletedTasks;
-}
+};
 
-
-//   var uncompletedTasks = this.tasks.filter(function(task){
-//     return task.completed === false;
-//   });
-//   return uncompletedTasks;
-// };
 module.exports = Hero;
