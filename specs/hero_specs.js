@@ -76,10 +76,21 @@ describe("Hero", function(){
     assert.strictEqual(hug_penny.completed, true);
   });
 
+  it("should be able to complete a different task", function(){
+    fitzgerald.completeTask(like_things);
+    assert.strictEqual(like_things.completed, true);
+  });
+
   it("should be able to view completed tasks", function(){
     fitzgerald.completeTask(hug_penny);
-    assert.strictEqual(fitzgerald.viewCompletedTasks(), [hug_penny]);
+    assert.deepEqual(fitzgerald.viewCompletedTasks(), [hug_penny]);
   });
+
+  it("should be able to view uncompleted tasks", function(){
+    fitzgerald.completeTask(hug_penny);
+    assert.deepEqual(fitzgerald.viewUncompletedTasks(), [find_facts, like_things]);
+  });
+
 
 
 });
